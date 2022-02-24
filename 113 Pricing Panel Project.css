@@ -1,0 +1,126 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box; /*borders dont add up to the width and height*/
+}
+
+body {
+    background-color: #00b4d8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.pricing-header {
+    color: #adb5bd;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    max-width: 960px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+}
+
+.pricing-plan {
+    border-bottom: 1px solid #2a9d8f;
+    
+}
+
+.pricing-plan:last-child {
+    border-bottom: none;
+    }
+ 
+.pricing-img {
+    max-width: 100%; /*f we don't specify the max-width to be 100%, then if the child element content is larger than 
+    the parent container, it can indeed overflow outside of it.*/
+    margin-bottom: 25px;
+}
+
+.pricing-features{
+    margin: 50px 0 25px; /*top | horizontal | bottom */
+    color: #00b4d8;
+}
+
+.pricing-features-item {
+    border-top: 1px solid #2a9d8f;
+    padding: 15px 0; 
+    line-height: 1.5;
+    font-size: 12px; 
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.pricing-features-item:last-child {
+    border-bottom: 1px solid #2a9d8f;
+}
+
+.pricing-price {
+    color: #00b4d8;
+    font-weight: bold;
+    display: block; /*makes the ''button'' to takes its own line - kind of a line break*/
+    font-size: 32px;
+}
+
+.pricing-button {
+    color: #00b4d8;
+    border: 1px solid #00b4d8;
+    border-radius: 10px;
+    padding: 15px 35px;
+    display: inline-block;
+    margin: 25px 0;
+    text-decoration: none;
+    transition: background-color 200ms ease-in-out; 
+}
+
+.pricing-button:hover {
+    background-color: #e1f1ff;
+    cursor: pointer;
+} 
+
+.pricing-button:focus { 
+    color: red;
+}
+
+/* that's Colt code but the FOCUS doesnt change anything. I decided to split HOVER and FOCUS to see FOCUS actually working*/
+/*focus is used to activate the ``hover function`` in mobile devices as there is no cursor in a mobile fone*/
+/* .pricing-button:hover, .pricing-button:focus  {
+    background-color: #e1f1ff;
+    }  */
+
+.pricing-button.is-featured { /*class inside of a class*/
+    color: white;
+    background-color: #00b4d8;
+}
+
+.pricing-button.is-featured:hover { 
+    /*Colt coded like this: .pricing-button.is-featured:hover, .pricing-button.is-featured:focus 
+    but again, I couldnt see any change*/
+    background-color: #1982c4;
+}
+
+@media (min-width:900px) {
+    .panel {flex-direction: row;
+    }
+    .pricing-plan {
+        border-bottom: none;
+        border-right: 1px solid #2a9d8f;
+        padding: 25px 50px;
+    }
+    .pricing-plan:last-child {
+        border-right: none;
+    }
+}
+
+
+
+
+
+
